@@ -58,7 +58,16 @@ st.markdown("""
 # Título y logo
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    st.image("logo_esip_clear.png", width=300)
+    # Intentar cargar el logo, si no existe continuar sin él
+    import os
+    logo_path = "logo_esip_clear.png"
+    if os.path.exists(logo_path):
+        try:
+            st.image(logo_path, width=300)
+        except Exception as e:
+            st.markdown("### ESIP S.A.S. E.S.P.")
+    else:
+        st.markdown("### ESIP S.A.S. E.S.P.")
     st.markdown('<h1 class="main-header">Dashboard Indicadores Internos ESIP - Octubre 2025</h1>', unsafe_allow_html=True)
 
 # Carga de datos
