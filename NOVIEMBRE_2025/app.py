@@ -3,6 +3,9 @@ import pandas as pd
 import plotly.express as px
 import numpy as np
 
+df_num = pd.read_csv("Ind_num.csv")
+df_porc = pd.read_csv("Ind_porc.csv")
+
 # ============================================================================
 # CONFIGURACIÓN INICIAL
 # ============================================================================
